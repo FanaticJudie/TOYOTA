@@ -1,0 +1,178 @@
+<!doctype html>
+
+<html>
+
+    <head>
+        <title>Toyota App Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1.0">
+        <link href="toyota.css" rel="stylesheet" type="text/css">
+
+
+    </head>
+    <h1 class="mailOrder">Toyota Mailing Order</h1>
+
+    <body>
+        <div class="main-container">
+            <!-- <form id="toyota-purchases" name="toyota"
+            onsubmit="validData(); return false;"> -->
+            <form action="orders" method="POST" id="toyota-purchases" name="toyota"
+                onsubmit="return validData()">
+
+                <div class="form-container">
+                    <!-- capturing Customer Information -->
+-
+                    <fieldset id="customer-info" class="form-group">
+
+                        <legend>Customer Information</legend>
+
+                        <div class="form-group">
+                            <label for="customer-id" class="form-label">CustomerID:</label>
+                            <input type="text" name="customer_id" id="customerid" class="form-control"
+                                placeholder="123-45-6789">
+                            <span id="custid"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="user-name" class="form-label">Name:</label>
+                            <input type="text" name="user_name" id="username" class="form-control"
+                                placeholder="Tom Thumb">
+                            <span id="name"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city" class="form-label" name="town">Town:</label>
+                            <div class="form-inline">
+
+                                <select id="town" class="form-control">
+                                    <option value="KLA" selected>KLA</option>
+                                    <option value="EBB">EBB</option>
+                                    <option value="MBR">MBR</option>
+                                    <option value="other">OTH</option>
+                                </select>
+
+                                <input type="checkbox" name="retail" id="retail" checked class="mx">
+                                <span id="twn"></span>
+                                <label for="retail"><small>Retail Customer</small></label>
+
+                            </div>
+                        </div> <!-- form-group out-->
+
+                    </fieldset>
+
+
+                    <!--capturing Shipping information-->
+
+                    <fieldset class="form-group" id="shipping">
+                        <legend>Shipping</legend>
+
+                        <div class="form-group">
+                            <input type="radio" name="ship_method" id="ups" value="UPS" checked>&nbsp;
+                            <label for="ups" class="">UPS</label>
+
+
+                            <input type="radio" name="ship_method" id="fedex">
+                            <label for="fed" class="">Fed Ex Ground</label>
+
+                        </div>
+
+                        <div class=" form-group">
+                            <input type="radio" name="ship_method" id="upa">
+                            <label for="upsa" class="">US Postal Air</label>
+
+                            <input type="radio" name="ship_method" id="fedair">
+                            <label for="fedair" class="">Fed Ex Air</label>
+                        </div>
+                    </fieldset>
+
+                    <!--capturing Part Ordered information-->
+
+                    <fieldset class="form-group" id="part-ordered">
+                        <legend>Part Ordered</legend>
+                        <div class="form-group">
+                            <label for="part_num" class="form-label">Part Number:</label>
+                            <input type="text" name="part_num" id="partnum" class="form-control" placeholder="10152">
+                            <span id="partno"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description" class="form-label">Description: </label>
+                            <input type="text" name="description" id="description" class="form-control"
+                                placeholder="Oil Filter">
+                            <span id="descript"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="unit-price" class="form-label">Price per part: </label>
+
+
+                            <div class="form-inline">
+                                <input type="text" name="unit_price" class="" id="priceperpart" placeholder="$7.51">
+                                <span id="ppp"></span>
+
+
+                                <label for="quantity" class="mx"><small>Quantity:</small></label>
+                                <input type="text" name="quantity" id="quantity" class="form-control" placeholder="2">
+                                <span id="qty"></span>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="oversize_" class="form-label"></label>
+                            <div class="form-inline">
+                                <input type="checkbox" name="oversize" id="oversize" value="not_oversize">
+                                <label for="oversize">Oversize Container?</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!--Capturing Output information-->
+                    <fieldset class="form-group" id="output">
+                        <legend>Output</legend>
+                        <div class="form-group">
+                            <label for="cost" class="form-label">Cost: </label>
+                            <input type="text" name="cost" id="cost" class="form-control" placeholder="$15.02"
+                                class="outputs">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sales-tax" class="form-label">Sales Tax: </label>
+                            <input type="text" name="sales_tax" id="salestax" class="form-control" placeholder="1.50"
+                                class="outputs">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ship-bill" class="form-label">Shipping &amp; Handling: </label>
+                            <input type="text" name="ship_bill" id="shipbill" class="form-control" placeholder="14.00"
+                                class="outputs">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="total-bill" class="form-label">Total: </label>
+                            <input type="text" name="total_bill" id="totalbill" class="form-control"
+                                placeholder="$30.52" class="outputs">
+                        </div>
+                    </fieldset>
+                </div>
+                <!--form container-->
+                <footer class="row">
+                    <button id="compute" type="submit" class="btn col1">Compute</button>
+                    <button id="new-order" class="btn col2">New Order</button>
+                    <button id="exit" class="btn col12">Exit</button>
+
+                </footer>
+            </form>
+        </div>
+        <script src="toyota.js"></script>
+    </body>
+
+
+
+
+
+
+
+
+
+</html>/
